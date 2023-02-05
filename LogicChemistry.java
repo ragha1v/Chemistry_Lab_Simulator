@@ -4,8 +4,10 @@ public class LogicChemistry {
 	public static void main(String [] args) {
 		Scanner sc=new Scanner(System.in);
 		//N1V1=N2V2
-		String Element=sc.next();
-		System.out.println(Element);
+		// String Element=sc.next();
+		// System.out.println(Element);
+		// Element array will be converted into drop down list in the gui 
+		String Element = {NaOH}
 		double n1=sc.nextDouble();
 		if(n1<=5 || n1>=0.01)
 		{
