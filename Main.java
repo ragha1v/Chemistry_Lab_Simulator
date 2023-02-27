@@ -46,13 +46,55 @@ public static void calculate()
 	public static void main(String [] args) {
 		
 	Scanner sc=new Scanner(System.in);
-		String Element[] = {"NaOH","KOH"};
+		String Reaction[] = {"HCl + NaOH",
+"CH3COOH + NaOH",
+"H2SO4 + NaOH",
+"HNO3 + NaOH",
+"Oxalic acid + NaOh",
+"HCl + KOH",
+"CH3COOH + KOH",
+"H2SO4 + KOH",
+"HNO3 + KOH",
+"Oxalic acid + KOH",
+"NaOH + HCl",
+"NaOH + CH3COOH",
+"NaOH + H2SO4",
+"NaOH + HNO3",
+"NaOH + Oxalic acid",
+"KOH	+ HCl",
+"KOH + CH3COOH",
+"KOH + H2SO4",
+"KOH + HNO3",
+"KOH + Oxalic acid",
+"HCl + NH4OH",
+"H2SO4 + NH4OH",
+"HNO3 + NH4OH",
+"HCl + KOH",
+"H2SO4 + KOH",
+"HNO3 + KOH",
+"HCl + NaOH",
+"H2SO4 + NaOH",
+"HNO3 + NaOH",
+"HCl + KOH",
+"H2SO4 + KOH",
+"HNO3 + KOH",
+"HCl + NaOH",
+"H2SO4 + NaOH",
+"HNO3 + NaOH",
+"KOH + HCl",
+"KOH + H2SO4",
+"KOH + HNO3",
+"NaOH + HCl",
+"NaOH + H2SO4",
+"NaOH + HNO3"
+};
+	
 		
-		for(int i=0;i<Element.length;i++)
+		for(int i=0;i<Reaction.length;i++)
 		{
-			System.out.println(i+1+" "+Element[i]);
+			System.out.println(i+1+" "+Reaction[i]);
 		}
-		System.out.println("Make choice of element by pressing the number mentioned");
+		System.out.println("Make choice of the reaction to conduct by pressing the number mentioned");
         int element_choice = sc.nextInt(); 
 		switch(element_choice)
 		{
