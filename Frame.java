@@ -29,7 +29,7 @@ import java.awt.event.ActionListener;
     l3.setBounds(0,-8,600,500);
     f1.add(l3);
 
-    ImageIcon img4 = new ImageIcon("start.jpg");
+    // ImageIcon img4 = new ImageIcon("start.jpg");
     JButton b1 = new JButton("START -->");
     b1.setBounds(0,388,595,35);
     b1.setFocusable(false);
@@ -59,7 +59,7 @@ import java.awt.event.ActionListener;
 
     f1.setVisible(true);
     f1.setResizable(false);
-    f1.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+    f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
   }
 
 
