@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Build Gradle') {
             steps {
                 // Configure the Gradle build step
                 gradle {
@@ -11,6 +11,7 @@ pipeline {
                     tasks 'build'
                 }
             }
+    }
     stage("build") {
       steps {
         echo 'building the application'
