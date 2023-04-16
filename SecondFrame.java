@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import java.util.*;
+import javax.swing.Timer;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -33,9 +34,11 @@ public class SecondFrame {
 
 		JLabel n1l=new JLabel("Enter n1");
 		JLabel v1l=new JLabel("Enter v1");
+		JLabel reqv =new JLabel("\n"+ "Required value of v2 is ");
 		
 		n1l.setBounds(20, 30, 70, 30);
 		v1l.setBounds(20, 65, 70, 30);
+		reqv.setBounds(20, 95, 70, 30);
 		
 		final JTextField n1=new JTextField();
 		n1.setBounds(100, 30, 130, 30);
@@ -55,6 +58,7 @@ public class SecondFrame {
 		// jb.setBounds(0,388,595,35);
 
 		mainframe.add(n1);
+		mainframe.add(reqv);
 		mainframe.add(n2);
 		mainframe.add(n1l);
 		mainframe.add(v1l);
@@ -64,6 +68,8 @@ public class SecondFrame {
 		int y = (int) ((dimension.getHeight() - mainframe.getHeight()) / 2);
 		mainframe.setLocation(x, y);
 
+
+		// Timer timer = new Timer(500);
 
 		button.addActionListener(new ActionListener() {
 			@Override
@@ -84,6 +90,11 @@ public class SecondFrame {
     			content.setBounds(265, 200, 55, 90);
 			}
 		});
+
+		// timer.setRepeats(true);
+        // timer.setCoalesce(true);
+        // timer.setInitialDelay(0);
+        // timer.start();
 
 		mainframe.add(button);
 
