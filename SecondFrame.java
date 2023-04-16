@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 import java.awt.Graphics;
 
 public class SecondFrame {
-	private JFrame mainframe = new JFrame("Chemistry Workstation");
+	public static JFrame mainframe = new JFrame("Chemistry Workstation");
 
 	public static Circle content;
 	Scanner sc=new Scanner(System.in);
@@ -34,11 +34,11 @@ public class SecondFrame {
 
 		JLabel n1l=new JLabel("Enter n1");
 		JLabel v1l=new JLabel("Enter v1");
-		JLabel reqv =new JLabel("\n"+ "Required value of v2 is ");
+		// JLabel reqv =new JLabel("\n"+ "Required value of v2 is ");
 		
 		n1l.setBounds(20, 30, 70, 30);
 		v1l.setBounds(20, 65, 70, 30);
-		reqv.setBounds(20, 95, 70, 30);
+		// reqv.setBounds(20, 95, 70, 30);
 		
 		final JTextField n1=new JTextField();
 		n1.setBounds(100, 30, 130, 30);
@@ -58,7 +58,7 @@ public class SecondFrame {
 		// jb.setBounds(0,388,595,35);
 
 		mainframe.add(n1);
-		mainframe.add(reqv);
+		// mainframe.add(reqv);
 		mainframe.add(n2);
 		mainframe.add(n1l);
 		mainframe.add(v1l);
@@ -90,11 +90,6 @@ public class SecondFrame {
     			content.setBounds(265, 200, 55, 90);
 			}
 		});
-
-		// timer.setRepeats(true);
-        // timer.setCoalesce(true);
-        // timer.setInitialDelay(0);
-        // timer.start();
 
 		mainframe.add(button);
 
@@ -139,15 +134,28 @@ public class SecondFrame {
 				double sa = Double.parseDouble(t1);
 				//Counter will be keep on increaing by 0.01 till we do not get the required volume
 				System.out.println("Counter");	
-				//calculate v2 and displaying the final result 			
+				//calculate v2 and displaying the final result 	
+				String s = "";		
                 while(v2<sa)
                 {
                     v2=v2+0.01;
 					String z = decimalFormat.format(v2);
 					System.out.println(z);
 					v2 = Double.parseDouble(z);
+
+					s = "Required value of v2 is "+ v2;
+
                 }
 				System.out.println("\n"+ "Required value of v2 is " + v2);
+				JButton button1 = new JButton(s);
+				button1.setBounds(180,300,230,35);
+				button1.setFocusable(false);
+    			button1.setBackground(Color.WHITE);
+    			button1.setBorder(BorderFactory.createEtchedBorder());
+    			// button1.setForeground(Color.black);
+    			button1.setFont(new Font("DialogInput" , Font.BOLD,12));
+				mainframe.add(button1);
+				
 				return;
 			}
 			//if n1 is not in the range it will display error 
