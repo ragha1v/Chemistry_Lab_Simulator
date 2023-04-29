@@ -12,6 +12,13 @@ pipeline {
                 }
             }
     }
+    stage('SonarQube analysis') {
+  steps {
+    withSonarQubeEnv('SonarQube') {
+      sh './gradlew sonarqube'
+    }
+  }
+}
     stage("build") {
       steps {
         echo 'building the application'
