@@ -21,7 +21,7 @@ pipeline {
                 }
     }
   }
-}
+
     stage("build") {
       steps {
         withSonarQubeEnv('SonarQube') {
