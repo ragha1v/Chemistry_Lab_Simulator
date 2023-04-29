@@ -1,18 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Build Gradle') {
-            steps {
-                // Configure the Gradle build step
-                gradle {
-                    // Set the path to your Gradle build script
-                    gradleFile 'path/to/build.gradle'
-                    // Set the tasks you want to execute
+//     stage('Build Gradle') {
+//             steps {
+//                 // Configure the Gradle build step
+//                 gradle {
+//                     // Set the path to your Gradle build script
+//                     gradleFile 'path/to/build.gradle'
+//                     // Set the tasks you want to execute
                   
-                    tasks 'build'
-                }
-            }
-    }
+//                     tasks 'build'
+//                 }
+//             }
+//     }
 //     stage('SonarQube analysis') {
 //   steps {
 //     withSonarQubeEnv('SonarQube') {
