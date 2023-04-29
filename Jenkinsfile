@@ -13,14 +13,11 @@ pipeline {
                 }
             }
     }
-    stage('SonarQube analysis') {
-  steps {
-     withSonarQubeEnv('SonarQube') {
-                    // Run the Gradle build script with the SonarQube analysis task
-                    sh 'gradle clean build sonarqube'
-                }
+    stage('Maven Build') {
+        steps {
+            sh 'mvn clean package'
+        }
     }
-  }
 
     stage("build") {
       steps {
