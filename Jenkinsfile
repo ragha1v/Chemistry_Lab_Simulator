@@ -8,20 +8,23 @@ pipeline {
                     // Set the path to your Gradle build script
                     gradleFile 'path/to/build.gradle'
                     // Set the tasks you want to execute
+                  
                     tasks 'build'
                 }
             }
     }
-    stage('SonarQube analysis') {
-  steps {
-    withSonarQubeEnv('SonarQube') {
-      sh './gradlew sonarqube'
-    }
-  }
-}
+//     stage('SonarQube analysis') {
+//   steps {
+//     withSonarQubeEnv('SonarQube') {
+//       sh './gradlew sonarqube'
+//     }
+//   }
+// }
     stage("build") {
       steps {
-        echo 'building the application'
+        withSonarQubeEnv('SonarQube') {
+                    sh 'mvn clean install sonar:sonar'
+                }
       }
     }
     stage("test") {
