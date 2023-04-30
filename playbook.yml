@@ -1,0 +1,19 @@
+---
+- name: httpd install & start services
+  hosts: all
+  become: True
+  tasks: 
+    - name: install httpd 
+      yum:
+        name: httpd
+        state: latest
+    - name: start Apache server
+      service:
+        name: httpd
+        state: started
+        enabled: True
+    - name: Deploy our application
+      copy:
+        src: Main.java
+        dest: /var/www/html/
+...
