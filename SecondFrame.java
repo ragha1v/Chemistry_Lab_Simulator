@@ -93,21 +93,166 @@ public class SecondFrame {
 
 		mainframe.add(button);
 
+		JLabel selectedLabel1 = new JLabel("Selected Item: ");
 
+		String[] items = {"HCl + NaOH",
+"CH3COOH + NaOH",
+"H2SO4 + NaOH",
+"HNO3 + NaOH",
+"Oxalic acid + NaOh",
+"HCl + KOH",
+"CH3COOH + KOH",
+"H2SO4 + KOH",
+"HNO3 + KOH",
+"Oxalic acid + KOH",
+"NaOH + HCl",
+"NaOH + CH3COOH",
+"NaOH + H2SO4",
+"NaOH + HNO3",
+"NaOH + Oxalic acid",
+"KOH	+ HCl",
+"KOH + CH3COOH",
+"KOH + H2SO4",
+"KOH + HNO3",
+"KOH + Oxalic acid",
+"HCl + NH4OH",
+"H2SO4 + NH4OH",
+"HNO3 + NH4OH",
+"HCl + KOH",
+"H2SO4 + KOH",
+"HNO3 + KOH",
+"HCl + NaOH",
+"H2SO4 + NaOH",
+"HNO3 + NaOH",
+"HCl + KOH",
+"H2SO4 + KOH",
+"HNO3 + KOH",
+"HCl + NaOH",
+"H2SO4 + NaOH",
+"HNO3 + NaOH",
+"KOH + HCl",
+"KOH + H2SO4",
+"KOH + HNO3",
+"NaOH + HCl",
+"NaOH + H2SO4",
+"NaOH + HNO3"};
+
+        // Create a dropdown list and add it to the content pane
+        JComboBox<String> dropdownList = new JComboBox<>(items);
+        // contentPane.add(dropdownList);
+
+		dropdownList.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Get the selected item from the JComboBox
+                String selected = (String) dropdownList.getSelectedItem();
+
+				selectedLabel1.setText("Selected Burette + Flask : " + selected);
+            }
+
+			// r1.setBounds(50, 280, 40, 30);
+        });
+
+        // Set the frame properties
+        // dropdownList.setName("Dropdown");
+        // dropdownList.setSize(90, 50);
+		// dropdownList.setBounds(50,270,40,30);
+		// selectedLabel1.setBounds(50,290,40,30);
+        // dropdownList.setLocationRelativeTo(null);
+
+		JLabel selectedLabel2 = new JLabel("Indicator : ");
+
+		String[] items1 = {"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Phenolphthalein",
+"Methly orange",
+"Methly orange",
+"Methly orange",
+"Methly orange",
+"Methly orange",
+"Methly orange",
+"Methly orange",
+"Methly orange",
+"Methly orange",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue",
+"Bromothymol Blue"
+};
+
+        // Create a dropdown list and add it to the content pane
+        JComboBox<String> dropdownList1 = new JComboBox<>(items1);
+        // contentPane.add(dropdownList);
+
+		dropdownList1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Get the selected item from the JComboBox
+                String selected2 = (String) dropdownList1.getSelectedItem();
+
+				selectedLabel2.setText("Indicator: " + selected2);
+            }
+        });
+
+		// dropdownList1.setName("Dropdown");
+        // dropdownList1.setSize(90, 50);
+		// dropdownList1.setBounds(50,320,40,30);
+		// selectedLabel2.setBounds(50,280,40,30);
 
 		content =new Circle();
 
     	content.setBounds(265, 200, 55, 90);
+		// content.add(dropdownList1);
+		// content.add(selectedLabel2);
 
 		GroupLayout lay = new GroupLayout(mainframe.getContentPane());
     	mainframe.getContentPane().setLayout(lay);
     	mainframe.getContentPane().add(button);
 		mainframe.getContentPane().add(content);
+		// mainframe.getContentPane().add(dropdownList);
 
     	JPanel p1 = new JPanel();
     	p1.setBounds(0,100,600,250);
     	p1.setBackground(Color.WHITE);
+
+		dropdownList.setSize(90, 50);
+		dropdownList.setBounds(50,270,40,30);
+		selectedLabel1.setBounds(50,290,40,30);
+
+		dropdownList1.setSize(90, 50);
+		dropdownList1.setBounds(50,320,40,30);
+		selectedLabel2.setBounds(50,280,40,30);
+
+		p1.add(dropdownList);
+		p1.add(dropdownList1);
+		p1.add(selectedLabel1);
+		p1.add(selectedLabel2);
+
     	mainframe.add(p1);
+		// mainframe.add(dropdownList);
 
 
 		mainframe.setVisible(true);
