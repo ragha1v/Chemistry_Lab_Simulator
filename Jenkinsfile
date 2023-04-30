@@ -13,18 +13,16 @@ pipeline {
                 }
             }
     }
-    stage('Maven Build') {
-        steps {
-            sh 'mvn clean package'
-        }
-    }
-
-    stage("build") {
-      steps {
-        withSonarQubeEnv('SonarQube') {
-                    sh 'mvn clean install sonar:sonar'
-                }
-      }
+//     stage('Maven Build') {
+//         steps {
+//             sh 'mvn clean package'
+//         }
+//     }
+stage('SonarQube analysis') {
+  withSonarQubeEnv('My SonarQube Server') {
+    sh 'sonar-scanner'
+  }
+}
     }
     stage("test") {
       steps {
