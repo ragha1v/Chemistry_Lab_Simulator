@@ -18,11 +18,11 @@ pipeline {
 //             sh 'mvn clean package'
 //         }
 //     }
-stage('SonarQube analysis') {
-  withSonarQubeEnv('My SonarQube Server') {
-    sh 'sonar-scanner'
-  }
-}
+// stage('SonarQube analysis') {
+//   withSonarQubeEnv('My SonarQube Server') {
+//     sh 'sonar-scanner'
+//   }
+// }
     
     stage("test") {
       steps {
@@ -33,6 +33,5 @@ stage('SonarQube analysis') {
       steps {
         echo 'deploying the application'
       }
-    }
     }
 }
