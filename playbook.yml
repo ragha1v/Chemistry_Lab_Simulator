@@ -1,6 +1,6 @@
 ---
 - name: httpd install & start services
-  hosts: all
+  hosts: webservers
   become: True
   tasks: 
     - name: install httpd 
