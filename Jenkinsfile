@@ -23,13 +23,13 @@ pipeline {
 //     sh 'sonar-scanner'
 //   }
 // }
-    stage('SonarQube analysis') {
-      steps{
-  withSonarQubeEnv('My SonarQube Server') {
-    sh 'sonar-scanner'
-  }
-      }
-}
+//     stage('SonarQube analysis') {
+//       steps{
+//   withSonarQubeEnv('My SonarQube Server') {
+//     sh 'sonar-scanner'
+//   }
+//       }
+// }
 
     
     stage("test") {
