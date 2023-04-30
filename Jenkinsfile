@@ -23,7 +23,7 @@ stage('SonarQube analysis') {
     sh 'sonar-scanner'
   }
 }
-    }
+    
     stage("test") {
       steps {
         echo 'testing the application'
