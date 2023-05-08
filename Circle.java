@@ -23,7 +23,7 @@ public class Circle extends JPanel{
 	public void paint(Graphics g)
 	{
 		setSize(500, 500);
-		g.drawOval(100, 100, 50, 50);
+		g.drawOval(100, 100, 50, 60);
 		g.setColor(Color.GREEN);
 		g.fillOval(100, 100, 50, 50);
 		setVisible(true);
